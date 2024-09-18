@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script>
+        function verificarAcesso(){
+        var nome = document.getElementById("nome").value;
+        var idade = document.getElementById("idade").value;
+
+        if(idade >=18) {
+            alert("Acesso permitido, " + nome + "!");
+        }else{
+            alert("Acesso negado, " + nome + ". Voce deve ter 18 anos ou mais.");
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+    <h2>Verifique seu acesso</h2>
+     <form onsubmit="event.preventDefault(); verificarAcesso();">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required>
+        <br><br>
+        <label for="idade">Idade:</label>
+        <input type="text" name="idade" id="idade" required>
+        <br><br>
+        <button type="submit">Verificar Acesso</button>
+
+     </form>
+
+</body>
+</html>
